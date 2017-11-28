@@ -104,7 +104,7 @@ public class Second extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    // 获取文件路径通过url
+    // 获取文件路径通过u　rl
     private String getFilePathByUri(Uri mUri) throws FileNotFoundException {
         Cursor cursor = getApplicationContext().getContentResolver().query(mUri, null, null, null, null);
         cursor.moveToFirst();
