@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <utils.LineaViewA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4d6"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <utils.LineaViewB
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:background="#C2c"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <utils.ViewTextUtils
+                android:id="@+id/rectveiws"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:background="@color/colorAccent"
+                android:gravity="center"
+                android:text="我是自定义的ＴｅｘｔＶｉｅｗ" />
+
+            <utils.ViewA
+                android:id="@+id/rectveiw"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                custom:RectView_text="我是自定义Ｖｉｅｗ"
+                custom:RectView_textColor="#5F80A7"
+                custom:RectView_textSize="18sp" />
+
+        </utils.LineaViewB>
+    </utils.LineaViewA>
+</LinearLayout>

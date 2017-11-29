@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <com.example.administrator.myapplication.RoundProgressBar
+        android:id="@+id/roundProgressBar2"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_alignLeft="@+id/roundProgressBar1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="78dp"
 
-    <com.example.administrator.myapplication.ViewText
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
+
+        custom:roundColor="#D1D1D1"
+        custom:roundProgressColor="@android:color/black"
+        custom:textColor="#9A32CD"
+        custom:textIsDisplayable="false"
+        custom:roundWidth="10dip"
+        custom:textSize="18sp"/>
+    <com.example.administrator.myapplication.AutoNumView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/rectveiw"
+        custom:RectView_text="123145"
+        custom:RectView_textColor="#5F80A7"
+        custom:RectView_textSize="18sp" />
 
     <com.example.administrator.myapplication.CTShapeRectangle
         android:layout_width="match_parent"

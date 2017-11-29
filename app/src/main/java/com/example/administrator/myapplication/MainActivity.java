@@ -5,30 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.os.Message;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.TreeMap;
+
+import utils.OntouchTestActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String tagMsg = "CTMainActivity===";
     private HandlerThread handlerThread;
-    private Handler handler;
+    //    private Handler handler;
     private TextView textView;
 
     //    MySevice.MyBinder myBinder;
@@ -44,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
 //    };
+    AutoNumView rectveiw;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,20 +49,47 @@ public class MainActivity extends AppCompatActivity {
 //                startService(intent);
 
 //                bindService(intent, serviceConnection, BIND_AUTO_CREATE);
+//                handler.removeCallbacksAndMessages(null);
 
-                Intent intent =new Intent(MainActivity.this, Second.class);
-
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, Second.class));
+                finish();
             }
         });
-
-        Timer timer=new Timer();
-        timer.schedule(new TimerTask() {
+        findViewById(R.id.tcv2).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                Log.e("CT==", tagMsg + "timer============");
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, OntouchTestActivity.class));
             }
-        },1000);
+        });
+        rectveiw = findViewById(R.id.rectveiw);
+        rectveiw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rectveiw.setTextRandom();
+            }
+        });
+        rectveiw.callOnClick();
+
+        final RoundProgressBar roundProgressBar2 = findViewById(R.id.roundProgressBar2);
+        roundProgressBar2.setProgress(70);
+        roundProgressBar2.setMax(100);
+//        Timer timer = new Timer();
+//        timer.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                textView.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        rectveiw.performClick();
+//                    }
+//                });
+//
+//                Log.e("CT==", tagMsg + "timer============");
+//            }
+//        },0,100);
+
+
+       // handler.postDelayed(runnable, 1000);
 
 
 //        findViewById(R.id.tcv1).setOnClickListener(new View.OnClickListener() {
@@ -96,6 +115,14 @@ public class MainActivity extends AppCompatActivity {
 //        myHandler.sendEmptyMessage(1);
     }
 
+    Handler handler = new Handler();
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            rectveiw.performClick();
+            handler.postDelayed(runnable, 100);
+        }
+    };
     MyHandler myHandler;
 
     static class MyHandler extends Handler {
