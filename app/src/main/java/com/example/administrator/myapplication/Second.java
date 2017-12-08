@@ -31,8 +31,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.zip.GZIPInputStream;
 
-import ex.MainActivity0;
-
 /**
  * Created by Administrator on 2017/11/23.
  */
@@ -60,7 +58,7 @@ public class Second extends AppCompatActivity {
         findViewById(R.id.tcv2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Second.this, MainActivity0.class));
+
             }
         });
 
