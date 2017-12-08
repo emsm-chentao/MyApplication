@@ -23,6 +23,8 @@ public class OntouchTestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
+
+
 //        findViewById(R.id.rectveiw).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
