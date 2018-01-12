@@ -35,7 +35,7 @@ import java.util.zip.GZIPInputStream;
  * Created by Administrator on 2017/11/23.
  */
 
-public class Second extends AppCompatActivity {
+public class PostImageAndTextContentActivity extends AppCompatActivity {
     private static final String tagMsg = "CTSecondActivity===";
     public static final int PHOTO_REQUEST_GALLERY = 111;// 从相册中选择
 
@@ -45,7 +45,7 @@ public class Second extends AppCompatActivity {
         Log.e("CT==", tagMsg + "onCreate");
         setContentView(R.layout.activity_main);
         TextView textView = (TextView) findViewById(R.id.tcv);
-        textView.setText("Second");
+        textView.setText("PostImageAndTextContentActivity");
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +78,7 @@ public class Second extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
-            case Second.PHOTO_REQUEST_GALLERY:// 相机
+            case PostImageAndTextContentActivity.PHOTO_REQUEST_GALLERY:// 相机
                 if (resultCode == RESULT_OK) {
                     String path = null;
                     try {

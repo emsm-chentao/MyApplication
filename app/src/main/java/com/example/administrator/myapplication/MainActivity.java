@@ -14,7 +14,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.lang.ref.WeakReference;
 
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 //                bindService(intent, serviceConnection, BIND_AUTO_CREATE);
 //                handler.removeCallbacksAndMessages(null);
 
-                startActivity(new Intent(MainActivity.this, Second.class));
+                startActivity(new Intent(MainActivity.this, PostImageAndTextContentActivity.class));
                 finish();
             }
         });
@@ -84,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         final RoundProgressBar roundProgressBar2 = findViewById(R.id.roundProgressBar2);
         roundProgressBar2.setProgress(70);
         roundProgressBar2.setMax(100);
+
+
 //        Timer timer = new Timer();
 //        timer.schedule(new TimerTask() {
 //            @Override
